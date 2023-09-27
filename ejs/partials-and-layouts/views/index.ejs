@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<%if (locals.numberOfLetters) { %>
+    <h1>There are <%=numberOfLetters%> in your name.</h1>
+<% } else { %>
+    <h1>Write your name: </h1>
+<% } %>
+
+<form action="/submit" method="post">
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="lName" placeholder="Last name">
+    <input type="submit" value="OK">
+</form>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<div class="lg">
+
+    <h1 class="text-3xl font-bold underline">Bem-vindo ao Grêmio Campeão Aleatório</h1>
+    <h2>Gerador de escalação do Grẽmio com base nos times campeões.</h2>
+    
+    <%if (locals.lineupGremio) { %>
+        <ul>
+            <% for (let i = 0; i < lineupGremio.length; i++) { %>
+                <li><%= lineupGremio[i] %></li>
+            <% } %>
+        </ul>
+    <% } %>
+
+<form action="/submit" method="post">
+    <input type="submit" value="Gerar">
+</form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
